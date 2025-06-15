@@ -1,8 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import Layout from '../components/Layout';
-// import Navbar from './Navbar'; // Removed, not needed
-// import React from 'react'; // Removed, not needed
+
 
 export const metadata: Metadata = {
   title: 'Nexaris Defense',
@@ -13,7 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <Layout>{children}</Layout>
+        {children}
       </body>
     </html>
   );
