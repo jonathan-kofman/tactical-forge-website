@@ -4,7 +4,16 @@ export default function ContactPage() {
   return (
     <div className="max-w-2xl mx-auto py-16 px-4 text-gray-100">
       <h1 className="text-4xl font-bold mb-6 text-blue-300">Contact Us</h1>
-      <form className="space-y-6 bg-gray-900 p-6 rounded-lg shadow-lg">
+      <form
+        action="https://formspree.io/f/xqabbdpg"
+        method="POST"
+        className="space-y-6 bg-gray-900 p-6 rounded-lg shadow-lg"
+      >
+        {/* Honeypot field for spam protection (should remain empty) */}
+        <div style={{ display: 'none' }} aria-hidden="true">
+          <label htmlFor="company">Company</label>
+          <input type="text" id="company" name="company" tabIndex={-1} autoComplete="off" />
+        </div>
         <div>
           <label className="block mb-1 font-semibold" htmlFor="name">Name</label>
           <input className="w-full px-3 py-2 rounded bg-gray-800 text-white" id="name" name="name" type="text" required />
