@@ -40,7 +40,7 @@ export default function Navbar() {
           href="/"
           className="text-2xl font-extrabold tracking-tight text-blue-400 hover:text-blue-300 transition drop-shadow"
         >
-          TacticalForge
+          Zephyr Defense
         </Link>
         <div className="space-x-2 md:space-x-6 hidden md:block">
           {navLinks.map((link) => (

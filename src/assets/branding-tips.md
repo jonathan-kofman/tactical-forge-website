@@ -1,8 +1,8 @@
-# TacticalForge Branding & Content Tips
+# Zephyr Defense Branding & Content Tips
 
 ## Logo
 - Use a bold, modern wordmark or emblem with a defense/technology motif
-- Consider a shield, forge, or digital/3D element
+- Consider a shield, wind, or digital/3D element
 
 ## Color Palette
 - Primary: Deep blue (#2563eb), navy, and steel gray

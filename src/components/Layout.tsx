@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <footer className="bg-gray-900 text-white text-center py-4 mt-8">
-        &copy; {new Date().getFullYear()} TacticalForge Technologies. All rights reserved.
+        &copy; {new Date().getFullYear()} Zephyr Defense. All rights reserved.
       </footer>
     </div>
   );

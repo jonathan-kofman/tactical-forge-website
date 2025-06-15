@@ -18,7 +18,7 @@ export default function LandingHero() {
         transition={{ duration: 1 }}
         className="relative z-10 text-5xl md:text-7xl font-extrabold mb-4 tracking-tight drop-shadow-lg"
       >
-        TacticalForge Technologies
+        Zephyr Defense
       </motion.h1>
       <motion.p
         initial={{ y: 20, opacity: 0 }}

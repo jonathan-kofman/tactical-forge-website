@@ -5,8 +5,8 @@ import Layout from '../components/Layout';
 // import React from 'react'; // Removed, not needed
 
 export const metadata: Metadata = {
-  title: 'TacticalForge Technologies',
-  description: 'Distributed Additive Manufacturing for Defense Applications',
+  title: 'Zephyr Defense',
+  description: 'Secure, Distributed Additive Manufacturing for Defense Applications',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

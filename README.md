@@ -1,4 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zephyr Defense Website
+
+A modern, scalable business website for Zephyr Defense, built with Next.js, TypeScript, and Tailwind CSS.
+
+## Project Structure
+
+```
+tactical-forge-website/
+│
+├── public/                  # Static assets (images, favicon, etc.)
+│   ├── images/
+│   │   ├── team/
+│   │   ├── partners/
+│   │   └── product/
+│   └── favicon.ico
+│
+├── src/
+│   ├── components/          # Reusable UI components
+│   ├── sections/            # Major homepage/landing sections
+│   ├── pages/               # Next.js pages (Home, About, etc.)
+│   ├── data/                # Static data (team, partners, etc.)
+│   ├── styles/              # Global and component styles
+│   └── assets/              # Fonts, icons, etc.
+│
+├── .env.local               # Environment variables
+├── .gitignore
+├── package.json
+├── README.md
+└── tailwind.config.js
+```
+
+## Tech Stack
+- Next.js (React framework)
+- TypeScript
+- Tailwind CSS
+
+## Scripts
+- `npm run dev` — Start development server
+- `npm run build` — Build for production
+- `npm start` — Start production server
+- `npm run lint` — Lint code
+
+## How to Use
+1. Clone the repo
+2. Run `npm install`
+3. Run `npm run dev` to start the local server
+
+## Contributing
+- Fork the repo
+- Create a feature branch
+- Commit changes
+- Open a pull request
+
+## License
+MIT
 
 ## Getting Started
 

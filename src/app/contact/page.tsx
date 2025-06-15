@@ -19,9 +19,11 @@ export default function ContactPage() {
         </div>
         <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded transition">Send</button>
       </form>
-      <div className="mt-8 text-blue-200">
-        <p>Email: info@tacticalforge.com</p>
-        <p>Address: 123 Defense Way, Boston, MA</p>
+      <div className="mt-8 text-blue-200 space-y-1">
+        <p><span className="font-semibold">Contact:</span> Jonathan Kofman</p>
+        <p><span className="font-semibold">Email:</span> <a href="mailto:jonkofm@hotmail.com" className="underline">jonkofm@hotmail.com</a></p>
+        <p><span className="font-semibold">Phone:</span> <a href="tel:9087988082" className="underline">908-798-8082</a></p>
+        <p><span className="font-semibold">Location:</span> Boston, MA, USA</p>
       </div>
       {/* Future: Add map, phone number, and social links here */}
     </div>
