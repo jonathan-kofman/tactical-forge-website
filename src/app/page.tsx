@@ -1,103 +1,85 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-blue-900 text-white flex flex-col">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center flex-1 py-16 px-4 text-center relative">
+        {/* Optional: Add a subtle background image or SVG accent here */}
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight drop-shadow-lg">
+          TacticalForge Technologies
+        </h1>
+        <p className="text-xl md:text-2xl max-w-2xl mb-8 text-blue-200">
+          Revolutionizing Defense Manufacturing with Secure, Distributed Additive Manufacturing
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/about" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow transition">Learn More</Link>
+          <Link href="/contact" className="bg-transparent border border-blue-400 hover:bg-blue-800 text-blue-200 font-semibold py-3 px-8 rounded-full transition">Contact Us</Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* About/Opportunity Section */}
+      <section className="max-w-4xl mx-auto py-12 px-4 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-300">The Opportunity</h2>
+        <p className="text-lg text-gray-200 mb-4">
+          The U.S. defense industry faces a $320.86B market opportunity with critical manufacturing vulnerabilities. TacticalForge enables rapid, secure, distributed 3D printing of mission-critical components—anywhere, anytime.
+        </p>
+        <p className="text-md text-blue-200">
+          Traditional supply chains are fragile and slow. Our solution empowers defense organizations to respond instantly, securely, and at scale.
+        </p>
+      </section>
+
+      {/* Solution Highlights Section */}
+      <section className="bg-gray-900 py-12 px-4">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8 text-center">
+          <div>
+            <h3 className="text-xl font-semibold mb-2 text-blue-400">Secure Cells</h3>
+            <p className="text-gray-300">Deployable manufacturing cells for any environment</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2 text-blue-400">Quantum Encryption</h3>
+            <p className="text-gray-300">Design distribution with quantum-level security</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2 text-blue-400">AI Optimization</h3>
+            <p className="text-gray-300">Production powered by advanced AI algorithms</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2 text-blue-400">Military-Grade Security</h3>
+            <p className="text-gray-300">STIG compliance and 99.9% uptime guarantee</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Stats Section */}
+      <section className="max-w-5xl mx-auto py-12 px-4 grid md:grid-cols-4 gap-8 text-center">
+        <div>
+          <span className="block text-3xl font-bold text-blue-400 mb-1">$10B+</span>
+          <span className="text-gray-300">Addressable Market by 2030</span>
+        </div>
+        <div>
+          <span className="block text-3xl font-bold text-blue-400 mb-1">65%</span>
+          <span className="text-gray-300">Gross Margin (Year 5)</span>
+        </div>
+        <div>
+          <span className="block text-3xl font-bold text-blue-400 mb-1">4hr</span>
+          <span className="text-gray-300">Deployment Time</span>
+        </div>
+        <div>
+          <span className="block text-3xl font-bold text-blue-400 mb-1">99.9%</span>
+          <span className="text-gray-300">Uptime Guarantee</span>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-12 px-4 bg-gradient-to-r from-blue-900 to-gray-900 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-200">Ready to Forge the Future of Defense?</h2>
+        <p className="text-lg text-gray-200 mb-6">Partner with TacticalForge Technologies to secure, accelerate, and transform your defense manufacturing capabilities.</p>
+        <Link href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow transition">Get in Touch</Link>
+      </section>
+
+      {/* Future extensibility: Add more sections, animations, or interactive features here */}
     </div>
   );
 }
