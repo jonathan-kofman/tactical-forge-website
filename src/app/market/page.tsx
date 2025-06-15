@@ -12,7 +12,7 @@ export default function MarketPage() {
         <li>Target market: $60M revenue by 2030 (5% market share)</li>
         <li>Critical need for secure, distributed manufacturing</li>
       </ul>
-      <p className="text-md text-blue-200">Zephyr Defense is positioned to capture a significant share of this rapidly growing market.</p>
+      <p className="text-md text-blue-200">Nexaris Defense is positioned to capture a significant share of this rapidly growing market.</p>
       {/* Future: Add market charts, competitor analysis, and industry reports here */}
     </div>
   );

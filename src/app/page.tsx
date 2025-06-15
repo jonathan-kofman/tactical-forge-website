@@ -1,14 +1,55 @@
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="bg-gray-950 text-white min-h-screen flex flex-col font-sans w-full">
+      {/* Sticky Navbar - moved outside hero section */}
+      <nav className="sticky top-0 z-50 w-full flex justify-between items-center py-6 px-4 md:px-12 backdrop-blur-sm bg-black/20 transition-all duration-300">
+        <div className="flex items-center gap-2">
+          <Image
+            src="/images/logo/nexaris defense logo.png"
+            alt="Nexaris Defense Logo"
+            width={40}
+            height={40}
+            className="h-10 w-auto"
+            priority
+          />
+          <span className="text-3xl font-extrabold tracking-widest text-yellow-400 drop-shadow-lg hover:text-yellow-300 transition-colors duration-300">
+            NEXARIS
+          </span>
+          {!scrolled && (
+            <span className="text-blue-400 font-bold text-lg tracking-widest hover:text-blue-300 transition-colors duration-300">
+              DEFENSE
+            </span>
+          )}
+        </div>
+        <div className="hidden md:flex gap-8 text-base font-bold tracking-widest">
+          <a href="#vision" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">OUR VISION</a>
+          <a href="#products" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">PRODUCTS</a>
+          <a href="#why" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">WHY NEXARIS</a>
+          <a href="#contact" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">CONTACT</a>
+          <a href="/legal" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">Privacy Policy</a>
+        </div>
+        <a href="#contact" className="bg-yellow-400 text-gray-900 font-bold px-5 py-2 rounded shadow-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 hover:shadow-yellow-400/50">CONTACT</a>
+      </nav>
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-[80vh] w-full px-0 text-center overflow-hidden bg-gradient-to-b from-gray-950 via-blue-950 to-blue-900">
         {/* Hero background image with dark overlay */}
         <div className="absolute inset-0 -z-10 w-full h-full">
           <Image
-            src="/images/hero-bg.jpg"
+            src="/images/metal_print2.webp"
             alt="Defense background"
             fill
             className="object-cover object-center opacity-60 w-full h-full transition-opacity duration-700 hover:opacity-70"
@@ -17,20 +58,6 @@ export default function Home() {
           {/* Subtle digital grid overlay */}
           <div className="absolute inset-0 w-full h-full bg-[url('/images/grid.svg')] opacity-20 mix-blend-overlay pointer-events-none animate-pulse" />
         </div>
-        <nav className="w-full flex justify-between items-center py-6 px-4 md:px-12 backdrop-blur-sm bg-black/20">
-          <div className="flex items-center gap-2">
-            <span className="text-3xl font-extrabold tracking-widest text-yellow-400 drop-shadow-lg hover:text-yellow-300 transition-colors duration-300">NEXARIS</span>
-            <span className="text-blue-400 font-bold text-lg tracking-widest hover:text-blue-300 transition-colors duration-300">DEFENSE</span>
-          </div>
-          <div className="hidden md:flex gap-8 text-base font-bold tracking-widest">
-            <a href="#vision" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">OUR VISION</a>
-            <a href="#products" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">PRODUCTS</a>
-            <a href="#why" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">WHY NEXARIS</a>
-            <a href="#contact" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">CONTACT</a>
-            <a href="/legal" className="hover:text-yellow-400 transition-colors duration-300 transform hover:scale-105">Privacy Policy</a>
-          </div>
-          <a href="#contact" className="bg-yellow-400 text-gray-900 font-bold px-5 py-2 rounded shadow-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 hover:shadow-yellow-400/50">CONTACT</a>
-        </nav>
         <div className="flex-1 flex flex-col items-center justify-center mt-12 w-full">
           <h1 className="text-5xl md:text-7xl font-black mb-4 tracking-widest drop-shadow-xl uppercase w-full px-4 md:px-0 animate-fade-in" style={{letterSpacing: '0.05em'}}>SOLUTIONS FOR TODAY&apos;S EVOLVING THREATS</h1>
           <p className="text-2xl md:text-3xl mb-6 text-yellow-400 font-bold tracking-wider w-full px-4 md:px-0 animate-fade-in-delayed">With Never-Fail Reliability</p>
@@ -44,23 +71,35 @@ export default function Home() {
       </section>
 
       {/* Feature/Value Proposition Section */}
-      <section id="vision" className="relative bg-blue-950 py-16 w-full text-left flex flex-col md:flex-row items-center gap-12 group">
+      <section id="vision" className="relative bg-blue-950 py-16 w-full flex flex-col md:flex-row items-center gap-12 group">
         {/* Angled SVG divider (top) */}
         <svg className="absolute -top-16 left-0 w-full h-16 md:h-24 transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 100L1440 0V100H0Z" fill="#0f172a"/></svg>
-        <div className="flex-1 z-10 px-4 md:px-12">
-          <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-widest uppercase text-yellow-400 drop-shadow group-hover:text-yellow-300 transition-colors duration-300">DESIGNED FOR SPEED. TRUSTED FOR PRECISION.</h2>
-          <p className="text-yellow-300 text-xl font-bold mb-2 tracking-wide group-hover:text-yellow-200 transition-colors duration-300">Built for What&apos;s Next</p>
-          <p className="mb-4 text-lg group-hover:text-blue-100 transition-colors duration-300">
-            Nexaris Defense delivers cutting-edge solutions for today&apos;s evolving threats—starting with smart, cost-effective payloads that fit seamlessly into what warfighters already carry.
-          </p>
-          <p className="text-md text-blue-100 group-hover:text-blue-50 transition-colors duration-300">
-            With deep operational insight and a proven history of rapid product development, Nexaris Defense exists to solve the urgent needs of modern defense with never-fail reliability.
-          </p>
-        </div>
-        <div className="flex-1 flex justify-center z-10 px-4 md:px-0">
-          <div className="w-64 h-64 bg-yellow-400 rounded-full shadow-2xl flex items-center justify-center border-8 border-blue-900 group-hover:border-blue-800 transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-yellow-400/50">
-            <span className="text-5xl font-black text-gray-900 tracking-widest group-hover:text-gray-800 transition-colors duration-300">NDN</span>
+        <div className="flex-1 z-10 px-4 md:px-12 flex flex-col gap-8">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-widest uppercase text-yellow-400 drop-shadow group-hover:text-yellow-300 transition-colors duration-300">Problem Statement & Solution</h2>
+          <h3 className="text-2xl font-bold text-yellow-300 mb-2">Critical Defense Manufacturing Challenges</h3>
+          <ul className="list-disc pl-6 text-blue-100 text-lg mb-4 space-y-2">
+            <li><span className="font-bold text-yellow-200">Supply Chain Fragility:</span> Over-dependence on foreign suppliers makes the defense industry vulnerable to disruptions. <span className="italic">COVID-19 pandemic exposed critical supply chain weaknesses across defense sectors.</span></li>
+            <li><span className="font-bold text-yellow-200">Slow Response Times:</span> Traditional manufacturing cannot keep pace with rapid deployment needs. <span className="italic">Ukraine conflict demonstrates need for rapid adaptation and component replacement.</span></li>
+            <li><span className="font-bold text-yellow-200">Forward Deployment Limitations:</span> Military units in remote locations lack manufacturing capabilities. <span className="italic">Remote bases and naval vessels cannot repair or replace critical components quickly.</span></li>
+            <li><span className="font-bold text-yellow-200">Security Risks:</span> Current manufacturing processes lack sufficient cybersecurity measures for sensitive defense applications. <span className="italic">30,659 cybersecurity attacks on federal agencies in 2022 alone.</span></li>
+            <li><span className="font-bold text-yellow-200">Limited Customization:</span> Traditional manufacturing cannot rapidly adapt to unique mission requirements. <span className="italic">Modern warfare requires rapid adaptation to new threats and environments.</span></li>
+          </ul>
+          <h3 className="text-2xl font-bold text-yellow-300 mb-2">Comprehensive Solution: TacticalForge Distributed Manufacturing Network (DMN)</h3>
+          <ul className="list-disc pl-6 text-blue-100 text-lg mb-4 space-y-2">
+            <li><span className="font-bold text-yellow-200">Secure Manufacturing Cells:</span> Hardened mobile 3D printing units, military-grade cybersecurity, multi-material capability, real-time quality monitoring. <span className="italic">Solves: Forward deployment limitations and security risks.</span></li>
+            <li><span className="font-bold text-yellow-200">Quantum-Encrypted Design Distribution:</span> Blockchain-secured blueprints, zero-trust architecture, automated IP protection, emergency protocols. <span className="italic">Solves: Security risks and supply chain fragility.</span></li>
+            <li><span className="font-bold text-yellow-200">AI-Powered Production Optimization:</span> Predictive maintenance, automated quality control, supply chain optimization, real-time analytics. <span className="italic">Solves: Slow response times and limited customization.</span></li>
+            <li><span className="font-bold text-yellow-200">Modular Material Systems:</span> Standardized cartridges, advanced composites, bio-compatible materials, rapid switching. <span className="italic">Solves: Limited customization and supply chain fragility.</span></li>
+          </ul>
+          <div className="text-blue-100 text-md space-y-2">
+            <div><span className="font-bold text-yellow-200">Key Differentiators:</span> Security-first design, rapid deployment, complete ecosystem, mission-critical reliability.</div>
+            <div><span className="font-bold text-yellow-200">Impact Metrics:</span> Deployment speed (4 hours vs. 2-6 weeks), 100% STIG-compliance, real-time customization, supply chain resilience, 30-50% cost reduction.</div>
+            <div><span className="font-bold text-yellow-200">Technology Readiness:</span> Proven hardware, advanced software, certified materials, full integration, comprehensive support.</div>
           </div>
+        </div>
+        <div className="flex-1 flex flex-col gap-8 items-center z-10 px-4 md:px-0">
+          <img src="/images/metal_print2.webp" alt="Advanced Metal Printing" className="rounded-lg shadow-lg w-full max-w-xs object-cover" />
+          <img src="/images/military.webp" alt="Military Application" className="rounded-lg shadow-lg w-full max-w-xs object-cover" />
         </div>
         {/* Angled SVG divider (bottom) */}
         <svg className="absolute bottom-0 left-0 w-full h-16 md:h-24 transition-transform duration-700 group-hover:translate-y-1" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0L1440 100H0V0Z" fill="#0f172a"/></svg>
@@ -70,7 +109,7 @@ export default function Home() {
       <section id="products" className="relative bg-gray-950 py-16 w-full group overflow-x-hidden">
         {/* Angled SVG divider (top) */}
         <svg className="absolute -top-16 left-0 w-full h-16 md:h-24 transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 100L1440 0V100H0Z" fill="#172554"/></svg>
-        <h2 className="text-4xl font-black mb-8 text-center transition-colors duration-300 group-hover:text-yellow-400 cursor-pointer tracking-widest uppercase w-full">Introducing Nexaris Defense Network (NDN)</h2>
+        <h2 className="text-4xl font-black mb-8 text-center transition-colors duration-300 group-hover:text-yellow-400 cursor-pointer tracking-widest uppercase w-full">Introducing Nexaris Defense</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full px-4 md:px-0">
           {[
             {
@@ -129,10 +168,10 @@ export default function Home() {
         <div className="flex-1 z-10 px-4 md:px-12">
           <h2 className="text-4xl font-black mb-4 text-yellow-400 tracking-widest uppercase">WHY NEXARIS?</h2>
           <p className="mb-4 text-lg">
-            Our team comes from domains where failure isn&apos;t an option and speed saves lives. We bring that mindset to modern defense—designing intuitive, field-ready systems that deliver decisive effects without delay.
+            Our team is forged from environments where precision and speed are non-negotiable. We channel this expertise into modern defense—engineering intuitive, mission-ready systems that deliver decisive results when they matter most.
           </p>
           <p className="mb-4 text-blue-100">
-            By repurposing trusted systems to meet new threats, Nexaris delivers unmatched cost-efficiency and speed-to-field. We build what warfighters reach for first—because when it matters most, they shouldn&apos;t have to think twice.
+            By leveraging proven technologies to counter emerging threats, Nexaris delivers exceptional cost-efficiency and rapid deployment. We create the solutions warfighters rely on first—ensuring that when every second counts, they have absolute confidence in their equipment.
           </p>
           <a href="#contact" className="inline-block mt-4 px-6 py-3 bg-yellow-400 text-gray-900 font-bold rounded shadow-lg hover:bg-yellow-300 transition">READ MORE</a>
         </div>
@@ -163,8 +202,6 @@ export default function Home() {
             </div>
             <div className="text-xs text-blue-200 flex gap-4 items-center">
               <span>&copy; {new Date().getFullYear()} Nexaris Defense</span>
-              <span>|</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors duration-300">Careers</a>
               <span>|</span>
               <a href="/legal" className="hover:text-yellow-400 transition-colors duration-300">Privacy Policy</a>
             </div>

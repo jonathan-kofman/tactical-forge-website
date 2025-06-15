@@ -1,4 +1,4 @@
-# Zephyr Defense Branding & Content Tips
+# Nexaris Defense Branding & Content Tips
 
 ## Logo
 - Use a bold, modern wordmark or emblem with a defense/technology motif

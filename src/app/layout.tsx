@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 // import React from 'react'; // Removed, not needed
 
 export const metadata: Metadata = {
-  title: 'Zephyr Defense',
+  title: 'Nexaris Defense',
   description: 'Secure, Distributed Additive Manufacturing for Defense Applications',
 };
 

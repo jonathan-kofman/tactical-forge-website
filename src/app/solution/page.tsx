@@ -3,9 +3,9 @@ import React from 'react';
 export default function SolutionPage() {
   return (
     <div className="max-w-4xl mx-auto py-16 px-4 text-gray-100">
-      <h1 className="text-4xl font-bold mb-6 text-blue-300">Our Solution: Zephyr Defense Network (ZDN)</h1>
+      <h1 className="text-4xl font-bold mb-6 text-blue-300">Our Solution: Nexaris Defense</h1>
       <p className="mb-4 text-lg">
-        The Zephyr Defense Network (ZDN) is a comprehensive ecosystem for defense manufacturing, featuring:
+        Nexaris Defense provides a comprehensive ecosystem for defense manufacturing, featuring:
       </p>
       <ul className="list-disc pl-6 mb-6 space-y-2">
         <li>Secure, deployable manufacturing cells</li>
